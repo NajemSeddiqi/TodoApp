@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_menu_kebab_white_black"
+        android:title="@string/main_menu"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/menu_item_1"
+                android:icon="@drawable/ic_checkmark_icon"
+                android:orderInCategory="100"
+                android:title="@string/menu_item_1"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menu_item_2"
+                android:icon="@drawable/ic_settings_icon"
+                android:orderInCategory="200"
+                android:title="@string/menu_item_2"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_item_3"
+                android:icon="@drawable/ic_about_icon"
+                android:orderInCategory="300"
+                android:title="@string/menu_item_3"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>

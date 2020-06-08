@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid
+                android:color="#20BD67"/>
+
+            <size
+                android:width="50dp"
+                android:height="50dp"/>
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/ic_plus_symbol"
+        android:top="40px"
+        android:right="40px"
+        android:bottom="40px"
+        android:left="40px"/>
+</layer-list>

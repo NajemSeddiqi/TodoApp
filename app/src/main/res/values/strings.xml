@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Listd</string>
+    <string name="main_heading">To-Do List</string>
+    <string name="current_date">Current date</string>
+    <string name="task_hint_title">Task title</string>
+    <string name="task_hint_info">Write task here</string>
+    <string name="new_task">New task</string>
+    <string name="add_task">Add task</string>
+    <string name="edit_task_title">Edit title</string>
+    <string name="edit_task">Edit info</string>
+    <string name="completed">Completed</string>
+    <string name="Uncompleted">Uncompleted</string>
+    <string name="delete_task">Delete</string>
+    <string name="update_task">Update</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="menu_item_0">Home</string>
+    <string name="menu_item_1">Completed tasks</string>
+    <string name="menu_item_2">Settings</string>
+    <string name="menu_item_3">About</string>
+    <string name="completed_tasks_h1">Completed Tasks</string>
+    <string name="delete_completed_tasks">Delete all completed tasks</string>
+    <string name="settings_h1">Settings</string>
+    <string name="hint_settings_email">this.example@gmail.com</string>
+    <string name="enter_email_msg">Enter an email to enable email notifications</string>
+    <string name="about_h1">About</string>
+    <string name="button_enable">Enable</string>
+    <string name="copyright">\u00A9 2019 Listd Inc.</string>
+</resources>

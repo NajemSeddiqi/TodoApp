@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorBackground"
+    android:minWidth="300dp"
+    android:minHeight="400dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:minWidth="300dp"
+        android:minHeight="400dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancelBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="start"
+                android:drawableStart="@drawable/ic_cancel_icon"
+                android:drawableLeft="@drawable/ic_cancel_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/new_task"
+                android:textColor="@color/colorBlack"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/creationInputTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:hint="@string/task_hint_title"
+            android:inputType="textPersonName"
+            android:maxLength="30"
+            android:padding="10dp"
+            android:textColor="@color/colorBlack" />
+
+        <EditText
+            android:id="@+id/creationInputInfo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:gravity="top|left"
+            android:hint="@string/task_hint_info"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="@color/colorBlack" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorGreen"
+        android:text="@string/add_task"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout" />
+
+</LinearLayout>

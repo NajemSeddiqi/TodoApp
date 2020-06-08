@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".CompletedTasks">
+
+    <Button
+        android:id="@+id/cancelBtn"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="40dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="36dp"
+        android:drawableStart="@drawable/ic_cancel_icon"
+        android:drawableLeft="@drawable/ic_cancel_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/idTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:drawableEnd="@drawable/ic_checkmark_icon"
+        android:drawableRight="@drawable/ic_checkmark_icon"
+        android:drawablePadding="10dp"
+        android:text="@string/completed_tasks_h1"
+        android:textColor="@color/colorBlack"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/completedList"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="20dp"
+        android:divider="@drawable/listview_divider"
+        android:dividerHeight="16.0dp"
+        app:layout_constraintBottom_toTopOf="@+id/deleteCompletedBtn"
+        app:layout_constraintTop_toBottomOf="@+id/idTxt"
+        tools:layout_editor_absoluteX="18dp" />
+
+    <Button
+        android:id="@+id/deleteCompletedBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:padding="20dp"
+        android:text="@string/delete_completed_tasks"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
