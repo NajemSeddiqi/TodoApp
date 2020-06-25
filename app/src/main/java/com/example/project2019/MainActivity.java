@@ -17,24 +17,23 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private Controller controller;
-    private ListView listView;
-    private Button addBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listView = findViewById(R.id.myListView);
-        controller = new Controller(this, listView);
-        addBtn = findViewById(R.id.addTaskBtn);
 
+        ListView listView = findViewById(R.id.myListView);
+
+        Button addBtn = findViewById(R.id.addTaskBtn);
         addBtn.setOnClickListener(v -> openDialog());
-        controller.getData();
-
         Calendar calender = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calender.getTime());
         TextView textViewDate = findViewById(R.id.textView_currentDate);
         textViewDate.setText(currentDate);
+
+        controller = new Controller(this, listView);
+        controller.getData();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,12 +62,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //This opens our add dialog
     private void openDialog() {
         CreationDialog cd = new CreationDialog(this);
         cd.show();
         cd.setOnDismissListener(dialog -> onRestart());
     }
 
+    //This allows the app to refresh after each action i.e add, delete, update and display correct values at all times
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        controller.getData();
+    }
+
+    //This allows the app to refresh after each action i.e add, delete, update and display correct values at all times
     @Override
     public void onRestart() {
         super.onRestart();

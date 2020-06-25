@@ -1,5 +1,7 @@
 package com.example.project2019.Helpers;
 
+import android.util.Log;
+
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -10,12 +12,14 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+//this class uses a library (check the imports) to send emails
 public class EmailNotification {
 
-    public void notifyViaEmail(String recipients, String subject,String textMessage) {
+    public void notifyViaEmail(String recipients, String subject, String textMessage) {
         final String user = "seddiqinajem@gmail.com";
         final String pass = "pdlq kzeu kbxn ftuy";
 
+        //We specify the protocols and ports
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -31,15 +35,20 @@ public class EmailNotification {
 
         try {
             javax.mail.Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("seddiqinajem@gmail.com"));
+            //Set a real email address to send this from
+            message.setFrom(new InternetAddress(""));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
             message.setSubject(subject);
             message.setText(textMessage);
             Transport.send(message);
 
-            System.out.println("Done");
+            Log.println(Log.INFO, "emailNotification", "Done");
         } catch (MessagingException ex) {
             System.out.println(ex.getMessage());
+//        } finally {
+            //I have this here just to remember
+//            //Sessions just manages configuration information, there is no need to close it.
+//        }
         }
     }
 }

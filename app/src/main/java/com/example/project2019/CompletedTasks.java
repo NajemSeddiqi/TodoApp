@@ -14,21 +14,21 @@ import com.example.project2019.Controller.Controller;
 
 public class CompletedTasks extends AppCompatActivity implements android.view.View.OnClickListener {
     private Controller controller;
-    private ListView theListView;
-    private Button deleteCompletedBtn, cancelBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_completed_tasks);
 
-        theListView = findViewById(R.id.completedList);
-        deleteCompletedBtn = findViewById(R.id.deleteCompletedBtn);
-        cancelBtn = findViewById(R.id.cancelBtn);
+        ListView theListView = findViewById(R.id.completedList);
+
+        Button deleteCompletedBtn = findViewById(R.id.deleteCompletedBtn);
+        deleteCompletedBtn.setOnClickListener(this);
+        Button cancelBtn = findViewById(R.id.cancelBtn);
+        cancelBtn.setOnClickListener(v -> finish());
+
         controller = new Controller(this, theListView);
         controller.getData();
-        deleteCompletedBtn.setOnClickListener(this);
-        cancelBtn.setOnClickListener(v -> finish());
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,13 +57,9 @@ public class CompletedTasks extends AppCompatActivity implements android.view.Vi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.deleteCompletedBtn:
-                controller.removeCompletedTasks();
-                onResume();
-                break;
-            default:
-                break;
+        if (v.getId() == R.id.deleteCompletedBtn) {
+            controller.removeCompletedTasks();
+            onResume();
         }
     }
 

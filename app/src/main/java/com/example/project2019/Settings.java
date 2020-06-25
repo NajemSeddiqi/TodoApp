@@ -12,21 +12,14 @@ import android.widget.EditText;
 import com.example.project2019.Controller.Controller;
 
 public class Settings extends AppCompatActivity {
-    private EditText emailInput;
-    private Button enableBtn, cancelBtn;
-    private Controller controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        controller = new Controller(this);
-        emailInput = findViewById(R.id.emailinput);
-        enableBtn = findViewById(R.id.enableEmailBtn);
-        cancelBtn = findViewById(R.id.cancelBtn);
 
+        Button cancelBtn = findViewById(R.id.cancelBtn);
         cancelBtn.setOnClickListener(v -> finish());
-
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

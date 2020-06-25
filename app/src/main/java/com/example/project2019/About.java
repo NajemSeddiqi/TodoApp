@@ -10,14 +10,12 @@ import android.widget.Button;
 
 public class About extends AppCompatActivity {
 
-    private Button cancelBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        cancelBtn = findViewById(R.id.cancelBtn);
 
+        Button cancelBtn = findViewById(R.id.cancelBtn);
         cancelBtn.setOnClickListener(view -> finish());
     }
 

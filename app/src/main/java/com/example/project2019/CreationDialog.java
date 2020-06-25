@@ -16,7 +16,6 @@ import com.example.project2019.Model.Task;
 
 public class CreationDialog extends Dialog implements android.view.View.OnClickListener {
     private EditText inputTitle, inputInfo;
-    private Button addBtn, cancelBtn;
     private Controller controller;
 
 
@@ -32,41 +31,38 @@ public class CreationDialog extends Dialog implements android.view.View.OnClickL
 
         inputTitle = findViewById(R.id.creationInputTitle);
         inputInfo = findViewById(R.id.creationInputInfo);
-        addBtn = findViewById(R.id.addBtn);
-        cancelBtn = findViewById(R.id.cancelBtn);
-        controller = new Controller(getContext());
+
+        Button addBtn = findViewById(R.id.addBtn);
         addBtn.setOnClickListener(this);
+        Button cancelBtn = findViewById(R.id.cancelBtn);
         cancelBtn.setOnClickListener(this);
 
+        controller = new Controller(getContext(), null);
     }
 
     private void sendToController() {
-        Task task = new Task();
-        task.setTaskName(inputTitle.getText().toString());
-        task.setTaskInfo(inputInfo.getText().toString());
         if (!checkField()) {
             Toast.makeText(getContext(), "Make sure your fields are not empty", Toast.LENGTH_SHORT).show();
         } else {
-            controller.postData(task);
+            Task task = new Task();
+            task.setTaskName(inputTitle.getText().toString());
+            task.setTaskInfo(inputInfo.getText().toString());
+            controller.addData(task);
         }
     }
 
     private boolean checkField() {
-        boolean fields = true;
-        if (inputTitle.length() == 0 || inputInfo.length() == 0) {
-            fields = false;
-        }
-        return fields;
+        return inputTitle.length() != 0 && inputInfo.length() != 0;
     }
 
+    //Invoked this for the onClickListener just to try it
+    //i prefer using self named methods like the other classes
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.addBtn:
                 sendToController();
-                if (checkField()) {
-                    dismiss();
-                }
+                if (checkField()) dismiss();
                 break;
             case R.id.cancelBtn:
                 dismiss();

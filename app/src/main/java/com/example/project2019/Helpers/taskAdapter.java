@@ -13,7 +13,7 @@ import com.example.project2019.R;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-
+//this a custom adapter where we convert views as we want
 public class taskAdapter extends ArrayAdapter<Task> {
 
     public taskAdapter(Context context, ArrayList<Task> tasks) {
@@ -32,6 +32,7 @@ public class taskAdapter extends ArrayAdapter<Task> {
         TextView taskDate = convertView.findViewById(R.id.tastDateTxt);
         TextView taskStatus = convertView.findViewById(R.id.taskStatusTxt);
 
+        assert tasks != null;
         taskTitle.setText(tasks.getTaskName());
         taskDate.setText(tasks.getDate());
         taskStatus.setText(tasks.getStatus());
