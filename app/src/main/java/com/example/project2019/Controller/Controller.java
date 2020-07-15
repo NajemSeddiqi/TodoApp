@@ -46,6 +46,29 @@ public class Controller implements VolleyCrud {
     private RequestQueue myQueue;
     private EmailNotification emailNotification;
 
+//    private enum Requests {
+//        Add("http://users.du.se/~h17lucro/IK2019/Project_Work/IK2019_Project_Work/index1.php?controller/addTask"),
+//        Remove("http://users.du.se/~h17lucro/IK2019/Project_Work/IK2019_Project_Work/index1.php?controller/deleteTask"),
+//        Update("http://users.du.se/~h17lucro/IK2019/Project_Work/IK2019_Project_Work/index1.php?controller/updateTask"),
+//        getData("http://users.du.se/~h17lucro/IK2019/Project_Work/IK2019_Project_Work/index1.php?controller/getTasks"),
+//        updateStatus("http://users.du.se/~h17lucro/IK2019/Project_Work/IK2019_Project_Work/index1.php?controller/updateStatusByID"),
+//        Delete("http://users.du.se/~h17lucro/IK2019/Project_Work/IK2019_Project_Work/index1.php?controller/deleteCompletedTask");
+//
+//        private final String url;
+//
+//        Requests(String s) {
+//            url = s;
+//        }
+//
+//        public boolean equalsMethod(String method) {
+//            return url.equals(method);
+//        }
+//
+//        public String reqToString() {
+//            return this.url;
+//        }
+//        }
+
 
     public Controller(Context c, ListView listView) {
         this.context = c;
